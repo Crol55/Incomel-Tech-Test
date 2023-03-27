@@ -1,0 +1,40 @@
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h4>CRUD Empleados</h4>
+            <hr>
+            <button class="btn btn-primary">Agregar nuevo empleado</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <table class="table">
+                <thead >
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">DPI</th>
+                    <th scope="col">Nombre Completo</th>
+                    <th scope="col">Cantidad de Hijos</th>
+                    <th scope="col">Salario Base</th>
+                    <th scope="col">Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let empleado of listaEmpleados; let indice = index">
+                    <th scope="row">{{indice + 1}}</th>
+                    <td>{{empleado.dpi}}</td>
+                    <td>{{empleado.nombre_completo}}</td>
+                    <td>{{empleado.cantidad_de_hijos}}</td>
+                    <td>{{empleado.salario_base}}</td>
+                    <td>
+                        <button class="btn btn-success">Detalle</button> |
+                        <button class="btn btn-warning" (click)="loadUpdateComponent(empleado)">Update</button> |
+                        <button class="btn btn-danger" (click)="deleteEmpleado(empleado)">Delete</button> 
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+    </div>
+</div>

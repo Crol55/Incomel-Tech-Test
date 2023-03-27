@@ -1,0 +1,89 @@
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between">
+    <a class="navbar-brand">Incomel</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="dashboard">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="dashboard">Empleados</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/">Logout</a>
+            </li>
+        </ul>
+    </div>
+    <form class="form-inline">
+        <button type="button" class="btn btn-warning">
+            User: <span >jiji</span>
+        </button>
+    </form>
+</nav>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            
+            <h5>Esta seguro que desea eliminar el Empleado?</h5>
+
+            <h3>Empleado</h3>
+            <hr>
+
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <label for="" class="campo"> <b>DPI</b>:</label>
+                <label for="" > {{empleadoInfo.dpi}} </label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <label for="" class="campo"> <b>Nombre Completo</b>:</label>
+                <label for="" > {{empleadoInfo.nombre_completo}}  </label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <label for="" class="campo"> <b>cantidad de Hijos</b>:</label>
+                <label for="" > {{empleadoInfo.cantidad_de_hijos}}  </label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <label for="" class="campo"> <b>Salario base</b>:</label>
+                <label for="" > {{empleadoInfo.salario_base}}  </label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <label for="" class="campo"> <b>Bono por decreto</b>:</label>
+                <label for="" > {{empleadoInfo.bono_decreto}}  </label>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+    <button class="btn btn-danger" (click)="deleteEmpleado()"> Delete Empleado </button>
+
+    <div class="row" id="popupAlert" *ngIf="showAlert">
+        <div class="col">
+            <div class="alert alert-warning" role="alert">
+                <p>Esta seguro que desea eliminar el registro</p>
+                <div style="text-align: center;">
+                    <button class="btn btn-success btn-lg" (click)="confirmDeleteEmpleado(btnSi)" id="si" #btnSi> si</button> |
+                    <button class="btn btn-danger  btn-lg" (click)="confirmDeleteEmpleado(btnNo)" id="no" #btnNo> no</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>

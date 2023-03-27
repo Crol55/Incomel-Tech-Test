@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class DashboardComponent {
 
+  showUsuariosComponent:boolean = true;
+
+  mostrarUsuarios(){
+    this.showUsuariosComponent = true;
+  }
+
+  logout(){
+
+  }
 }

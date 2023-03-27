@@ -1,0 +1,57 @@
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between">
+    <a class="navbar-brand">Incomel</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="dashboard">Home <span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="dashboard">Empleados</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/">Logout</a>
+            </li>
+        </ul>
+    </div>
+    <form class="form-inline">
+        <button type="button" class="btn btn-warning">
+            User: <span >jiji</span>
+        </button>
+    </form>
+</nav>
+
+<div class="container" style="padding-top: 30px; width: 60%;">
+    <div class="row">
+        <div class="col-6">
+            <label >DPI</label>
+            <input type="number" class="form-control" [value]="empleadoInfo.dpi" readonly>
+        </div>
+        <div class="col-6">
+            <label for="exampleInputEmail1">Cantidad de Hijos</label>
+            <input type="number" class="form-control" [(ngModel)]="empleadoInfo.cantidad_de_hijos">
+        </div>
+    </div>
+
+    <div class="row" style="padding-top: 10px;">
+        <div class="col-6">
+            <label for="exampleInputEmail1">Nombre Completo</label>
+            <input type="text" class="form-control" [(ngModel)]="empleadoInfo.nombre_completo">
+        </div>
+        <div class="col-6">
+            <label for="exampleInputEmail1">Salario Base</label>
+            <input type="number" class="form-control" [(ngModel)]="empleadoInfo.salario_base">
+        </div>
+    </div>
+    <div class="row" style="padding-top: 30px;">
+        <div class="col">
+            <button class="btn btn-success" (click)="updateEmpleado()"> Update Empleado</button>
+        </div>
+    </div>
+</div>
+
