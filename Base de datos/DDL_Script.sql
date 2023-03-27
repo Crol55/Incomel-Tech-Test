@@ -20,9 +20,18 @@ CREATE TABLE EMPLEADO(
 	`cantidad_de_hijos` TINYINT UNSIGNED NOT NULL,
 	`salario_base` FLOAT NOT NULL,
 	`bono_decreto` FLOAT NOT NULL DEFAULT 250.00,
-	`deleted` TINYINT NOT NULL DEFAULT 0,
+	`deleted` boolean NOT NULL DEFAULT false,
 	`fecha_creacion` DATETIME NOT NULL DEFAULT NOW(),
     `USUARIO_id` INT NOT NULL,
 	PRIMARY KEY (`id`),
   CONSTRAINT `fk_EMPLEADO_USUARIO` FOREIGN KEY (`USUARIO_id`) REFERENCES USUARIO(id)
 );
+
+DELIMITER //
+CREATE PROCEDURE DeleteEmpleado(In dpi varchar(15))
+BEGIN 
+    update EMPLEADO 
+    set deleted = true 
+    where EMPLEADO.dpi = dpi;
+END//
+DELIMITER ;
