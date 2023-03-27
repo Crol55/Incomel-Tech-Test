@@ -49,21 +49,23 @@ namespace Incomel.Controllers
 
         [HttpPut]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public ActionResult<EmpleadoDTO> updateEmpleado([FromBody] EmpleadoDTO empleadoDto)
+        public ActionResult<Object> updateEmpleado([FromBody] EmpleadoDTO empleadoDto)
         {
             //Empleado empleado = _mapper.Map<Empleado>(empleadoDto);
 
             Empleado empleadoForUpdate = _db.EMPLEADO.SingleOrDefault<Empleado>( e => e.Dpi == empleadoDto.Dpi);
 
             if (empleadoForUpdate != null) {
+
                 empleadoForUpdate.Nombre_completo = empleadoDto.Nombre_completo;
                 empleadoForUpdate.Cantidad_de_hijos = empleadoDto.Cantidad_de_hijos;
                 empleadoForUpdate.Salario_base = empleadoDto.Salario_base;
-                empleadoForUpdate.Deleted = empleadoDto.Deleted;
+
                 _db.SaveChanges();
+                return Ok(new { updated = true });
             }
-            
-            return empleadoDto;
+
+            return NotFound(new { updated = false });
         }
 
 

@@ -13,8 +13,8 @@ namespace Incomel.Controllers
         public UsuarioController(ApplicationDbContext db) { 
             _db = db;
         }
-       
 
+    
         [HttpGet]
         [Route("existeUsuario")]
         [ProducesResponseType(StatusCodes.Status200OK), ProducesResponseType(StatusCodes.Status404NotFound)]
