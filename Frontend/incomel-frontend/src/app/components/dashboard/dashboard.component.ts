@@ -14,6 +14,6 @@ export class DashboardComponent {
   }
 
   logout(){
-
+    localStorage.removeItem('userEmail');
   }
 }

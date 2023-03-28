@@ -16,16 +16,22 @@ export class AgregarEmpleadoComponent {
 
   agregarUsuario(dpiInput:HTMLInputElement){
     
-    
     if(dpiInput.value != ""){
 
       this.empleado.dpi = dpiInput.value;
 
       this.empleadoData.createEmpleado(this.empleado, 1)
       .subscribe(
-        data => {console.log(data);},
+        data => {
+          console.log(data);
+          window.alert("Usuario agregado correctamente");
+        },
         error =>{console.log(error);}
       );
     }
+  }
+
+  logout(){
+    localStorage.removeItem('userEmail');
   }
 }

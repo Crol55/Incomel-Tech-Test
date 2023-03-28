@@ -16,6 +16,7 @@ import { DeleteEmpleadoComponent } from './components/delete-empleado/delete-emp
 import { AgregarEmpleadoComponent } from './components/agregar-empleado/agregar-empleado.component';
 import { MainPageComponent } from './components/password_recovery/main-page/main-page.component';
 import { ConfirmPasswordComponent } from './components/password_recovery/confirm-password/confirm-password.component';
+import { LoginGuardian } from './guards/LoginGuardian.guard'
 
 @NgModule({
   declarations: [
@@ -35,7 +36,7 @@ import { ConfirmPasswordComponent } from './components/password_recovery/confirm
     HttpClientModule,
     FormsModule
   ],
-  providers: [UsuarioData, EmpleadoData, EmpleadoService],
+  providers: [UsuarioData, EmpleadoData, EmpleadoService, LoginGuardian],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

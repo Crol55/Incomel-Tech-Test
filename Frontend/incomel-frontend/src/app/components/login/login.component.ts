@@ -19,9 +19,13 @@ export class LoginComponent {
         console.log(data)
         if(data.existe == true){
           this.router.navigate(['dashboard']);
+          localStorage.setItem('userEmail', inputEmail.value);
         }
       }, 
-      (error) =>{console.log(error);}
+      (error) =>{
+        console.log(error);
+        window.alert("Usuario o contraseña incorrectos");
+      }
     );
    
   }
