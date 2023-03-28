@@ -4,7 +4,7 @@
         <div class="col">
             <h4>CRUD Empleados</h4>
             <hr>
-            <button class="btn btn-primary">Agregar nuevo empleado</button>
+            <button class="btn btn-primary" (click)="agregarEmpleado()">Agregar nuevo empleado</button>
         </div>
     </div>
     <div class="row">
@@ -28,8 +28,7 @@
                     <td>{{empleado.cantidad_de_hijos}}</td>
                     <td>{{empleado.salario_base}}</td>
                     <td>
-                        <button class="btn btn-success">Detalle</button> |
-                        <button class="btn btn-warning" (click)="loadUpdateComponent(empleado)">Update</button> |
+                        <button class="btn btn-warning" (click)="loadUpdateComponent(empleado)">Update/Detalle</button> |
                         <button class="btn btn-danger" (click)="deleteEmpleado(empleado)">Delete</button> 
                     </td>
                   </tr>

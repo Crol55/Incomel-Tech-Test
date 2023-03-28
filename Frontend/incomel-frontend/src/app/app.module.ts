@@ -13,6 +13,7 @@ import { UpdateUsuarioComponent } from './components/update-usuario/update-usuar
 import { EmpleadoService } from './services/EmpleadoService.service';
 import { FormsModule } from '@angular/forms';
 import { DeleteEmpleadoComponent } from './components/delete-empleado/delete-empleado.component';
+import { AgregarEmpleadoComponent } from './components/agregar-empleado/agregar-empleado.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { DeleteEmpleadoComponent } from './components/delete-empleado/delete-emp
     DashboardComponent,
     UsuariosComponent,
     UpdateUsuarioComponent,
-    DeleteEmpleadoComponent
+    DeleteEmpleadoComponent,
+    AgregarEmpleadoComponent
   ],
   imports: [
     BrowserModule,

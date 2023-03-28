@@ -34,7 +34,9 @@
         </div>
         <div class="col-6">
             <label for="exampleInputEmail1">Cantidad de Hijos</label>
-            <input type="number" class="form-control" [(ngModel)]="empleadoInfo.cantidad_de_hijos">
+            <input type="number" class="form-control" 
+                [(ngModel)]="empleadoInfo.cantidad_de_hijos" (input)="changeCantidadHijos()"
+            >
         </div>
     </div>
 
@@ -45,13 +47,68 @@
         </div>
         <div class="col-6">
             <label for="exampleInputEmail1">Salario Base</label>
-            <input type="number" class="form-control" [(ngModel)]="empleadoInfo.salario_base">
+            <input type="number" class="form-control"
+                [(ngModel)]="empleadoInfo.salario_base" (input)="changeSalarioBase()"
+            >
         </div>
     </div>
+    <div class="row"  style="padding-top: 10px;">
+        <div class="col-3">
+            <label for="exampleInputEmail1">Bono decreto</label>
+            <input type="number" class="form-control" [(ngModel)]="empleadoInfo.bono_decreto" readonly>
+        </div>
+    </div>
+
+    <div class="row"  style="padding-top: 20px;">
+        <div class="col">
+            <h6>Calculos y Bonos: </h6>
+            <hr>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-5">
+            <label for=""> <b>IGSS</b>: </label>
+            <label style="padding-left: 10px;"> {{igss}}</label>
+        </div>
+        <div class="col">
+            <label for=""> <b>IRTRA</b>: </label>
+            <label style="padding-left: 10px;" > {{irtra}}</label>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <label for=""> <b>BONO DE PATERNIDAD</b>: </label>
+            <label style="padding-left: 10px;"> {{bonoPaternidadInterp}}</label>
+        </div>
+        
+    </div>
+
+    <div class="row">
+        
+        <div class="col-12">
+            <label for=""> <b>Salario Total</b>: </label>
+            <label style="padding-left: 10px;"> {{salarioTotalInterp}}</label>
+        </div>
+        
+    </div>
+
+    <div class="row"> 
+        <div class="col-12" style="color: forestgreen;">
+            <label for=""> <b>Salario Liquido</b>: </label>
+            <label style="padding-left: 10px;"> {{salarioLiquido}}</label>
+        </div>
+        
+    </div>
+
+
     <div class="row" style="padding-top: 30px;">
         <div class="col">
             <button class="btn btn-success" (click)="updateEmpleado()"> Update Empleado</button>
         </div>
     </div>
+
+
 </div>
 

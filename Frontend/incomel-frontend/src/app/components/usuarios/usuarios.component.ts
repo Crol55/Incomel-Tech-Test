@@ -30,12 +30,22 @@ export class UsuariosComponent {
   loadUpdateComponent(empleadoInfo:EmpleadoModel):void{
    
     this.empleadoService.setEmpleado(empleadoInfo);
-    this.router.navigate(['usuarios/update']);
+    this.router.navigate(['empleado/update']);
   }
 
   deleteEmpleado(empleadoInfo: EmpleadoModel){
 
     this.empleadoService.setEmpleado(empleadoInfo);
-    this.router.navigate(['usuarios/delete']);
+    this.router.navigate(['empleado/delete']);
+  }
+
+  detalleEmpleado(empleadoInfo: EmpleadoModel){
+    
+    this.empleadoService.setEmpleado(empleadoInfo);
+    this.router.navigate(['empleado']);
+  }
+
+  agregarEmpleado(){
+    this.router.navigate(['empleado']);
   }
 }
