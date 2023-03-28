@@ -27,7 +27,7 @@ namespace Incomel.Controllers
         public ActionResult <EmpleadoDTO> createEmpleado( [FromBody] EmpleadoDTO empleadoDto)
         {   
             Empleado empleado = _mapper.Map<Empleado>(empleadoDto);
-
+            Console.WriteLine("Creacion de usuario recibida en el servidor");
             _db.EMPLEADO.Add(empleado);
             _db.SaveChanges();
 
