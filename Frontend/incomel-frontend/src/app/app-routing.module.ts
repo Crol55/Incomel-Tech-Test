@@ -4,6 +4,7 @@ import { AgregarEmpleadoComponent } from './components/agregar-empleado/agregar-
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { DeleteEmpleadoComponent } from './components/delete-empleado/delete-empleado.component';
 import { LoginComponent } from './components/login/login.component';
+import { PalindromoComponent } from './components/palindromo/palindromo.component';
 import { ConfirmPasswordComponent } from './components/password_recovery/confirm-password/confirm-password.component';
 import { MainPageComponent } from './components/password_recovery/main-page/main-page.component';
 import { UpdateUsuarioComponent } from './components/update-usuario/update-usuario.component';
@@ -18,7 +19,8 @@ const routes: Routes = [
   {path:"empleado/update",canActivate:[LoginGuardian], component: UpdateUsuarioComponent},
   {path:"empleado/delete",canActivate:[LoginGuardian], component: DeleteEmpleadoComponent},
   {path:"usuario/recovery", component: MainPageComponent},
-  {path:"usuario/recovery/confirmPassword/:email/:resetCode", component: ConfirmPasswordComponent}
+  {path:"usuario/recovery/confirmPassword/:email/:resetCode", component: ConfirmPasswordComponent},
+  {path:"palindromo", component: PalindromoComponent}
 ];
 
 @NgModule({

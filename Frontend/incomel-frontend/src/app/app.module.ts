@@ -16,7 +16,8 @@ import { DeleteEmpleadoComponent } from './components/delete-empleado/delete-emp
 import { AgregarEmpleadoComponent } from './components/agregar-empleado/agregar-empleado.component';
 import { MainPageComponent } from './components/password_recovery/main-page/main-page.component';
 import { ConfirmPasswordComponent } from './components/password_recovery/confirm-password/confirm-password.component';
-import { LoginGuardian } from './guards/LoginGuardian.guard'
+import { LoginGuardian } from './guards/LoginGuardian.guard';
+import { PalindromoComponent } from './components/palindromo/palindromo.component'
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { LoginGuardian } from './guards/LoginGuardian.guard'
     DeleteEmpleadoComponent,
     AgregarEmpleadoComponent,
     MainPageComponent,
-    ConfirmPasswordComponent
+    ConfirmPasswordComponent,
+    PalindromoComponent
   ],
   imports: [
     BrowserModule,
