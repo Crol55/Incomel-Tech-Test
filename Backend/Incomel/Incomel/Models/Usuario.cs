@@ -24,5 +24,7 @@ namespace Incomel.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         public DateTime Fecha_creacion { get; set; }//DATETIME NOT NULL DEFAULT NOW(),
 
+        [StringLength(100)]
+        public string? Reset_password_code { get; set; } //varchar(100)  DEFAULT null,
     }
 }
