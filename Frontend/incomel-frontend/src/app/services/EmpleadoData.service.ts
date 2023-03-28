@@ -1,4 +1,4 @@
-import {HttpClient, HttpParams} from '@angular/common/http'
+import {HttpClient, HttpParams, HttpHeaders} from '@angular/common/http'
 import { Injectable } from '@angular/core';
 import { EmpleadoModel } from '../data_models/EmpleadoModel';
 
@@ -35,5 +35,22 @@ export class EmpleadoData{
         
 
         return this.httpClient.delete(this.EMPLEADO_URL, { params: queryParams} );
+    }
+
+    createEmpleado(empleado: EmpleadoModel, usuarioId:number){
+
+        let headers = new HttpHeaders({
+            "Content-Type": "application/json"
+        })
+        //console.log(empleado);
+        let body = {
+            "dpi": empleado.dpi, 
+            "nombre_completo": empleado.nombre_completo, 
+            "cantidad_de_hijos": empleado.cantidad_de_hijos,
+            "salario_base": empleado.salario_base,
+            "usuariO_id": usuarioId
+        };
+
+        return this.httpClient.post(this.EMPLEADO_URL, body, {headers: headers});
     }
 }

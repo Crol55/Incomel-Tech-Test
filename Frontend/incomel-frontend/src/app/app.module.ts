@@ -14,6 +14,8 @@ import { EmpleadoService } from './services/EmpleadoService.service';
 import { FormsModule } from '@angular/forms';
 import { DeleteEmpleadoComponent } from './components/delete-empleado/delete-empleado.component';
 import { AgregarEmpleadoComponent } from './components/agregar-empleado/agregar-empleado.component';
+import { MainPageComponent } from './components/password_recovery/main-page/main-page.component';
+import { ConfirmPasswordComponent } from './components/password_recovery/confirm-password/confirm-password.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { AgregarEmpleadoComponent } from './components/agregar-empleado/agregar-
     UsuariosComponent,
     UpdateUsuarioComponent,
     DeleteEmpleadoComponent,
-    AgregarEmpleadoComponent
+    AgregarEmpleadoComponent,
+    MainPageComponent,
+    ConfirmPasswordComponent
   ],
   imports: [
     BrowserModule,
