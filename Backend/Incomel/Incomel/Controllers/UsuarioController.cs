@@ -2,7 +2,12 @@
 using Incomel.Data;
 using Incomel.Models;
 using Incomel.Models.DTO;
+using MailKit.Net.Smtp;
+using MailKit.Security;
 using Microsoft.AspNetCore.Mvc;
+using MimeKit;
+using MimeKit.Text;
+using static System.Net.WebRequestMethods;
 
 namespace Incomel.Controllers
 {
@@ -47,8 +52,23 @@ namespace Incomel.Controllers
 
             var resetCode = Guid.NewGuid().ToString();
             usuario.Reset_password_code = resetCode;
-            // Send email 
             _db.SaveChanges();
+            // Send email 
+            var email = new MimeMessage();
+            email.From.Add(MailboxAddress.Parse("cortez.russel@ethereal.email"));
+            email.To.Add(MailboxAddress.Parse(resetPwdBody.Email));
+            email.Subject = "Email recovery";
+            email.Body = new TextPart(TextFormat.Html) { Text = 
+                String.Format("<h1> Para recuperar su contrasenia ingrese al siguiente enlace:" +
+                "<a href=\"http://localhost:4200/usuario/recovery/confirmPassword/{0}/{1}\" target=\"_blank\">Reset Password</a> </h1>"
+                , resetPwdBody.Email, resetCode
+                )                                
+            };
+            using var smtp = new SmtpClient();
+            smtp.Connect("smtp.ethereal.email", 587, SecureSocketOptions.StartTls);
+            smtp.Authenticate("cortez.russel@ethereal.email", "KhmRD99uKQc3x4KPXt");
+            smtp.Send(email);
+            smtp.Disconnect(true);
 
             return Ok(new { existe = true });
         }
