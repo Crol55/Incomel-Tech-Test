@@ -1,0 +1,19 @@
+
+<div class="container" style="padding-top: 50px;">
+    <div class="row">
+        <div class="col-4">
+            <div class="form-outline form-white mb-3">
+                <input type="text" id="typePasswordX" class="form-control form-control-lg" #palin style="background-color: bisque;"/>
+                <label class="form-label" for="typePasswordX" style="color:maroon;" >Texto</label>
+            </div>
+        </div>
+        <div class="col">
+            <button class="btn btn-info btn-lg" (click)="buscarPalindromos(palin)">Buscar</button>
+        </div>
+    </div>
+    <div class="row" *ngFor="let i of myArray">
+        <div class="col">
+            {{i}}
+        </div>
+    </div>
+</div>

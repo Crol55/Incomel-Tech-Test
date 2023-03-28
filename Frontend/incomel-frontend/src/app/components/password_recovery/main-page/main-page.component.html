@@ -1,0 +1,51 @@
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between">
+    <a class="navbar-brand">Incomel</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="login">Login <span class="sr-only"></span></a>
+            </li>
+            
+        </ul>
+    </div>
+</nav>
+
+<div class="container" style="padding-top: 40px;">
+    <div class="row">
+        <div class="col">
+            <h3>Recuperar Contraseña</h3>
+            <hr>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <p>Para recuperar su contraseña, debe llenar correctamente los siguientes campos</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-6">
+            <label >Email</label>
+            <input type="email" class="form-control" placeholder="Ingrese Email" required #emailInput>
+        </div>
+    </div>
+
+    <div class="row" style="padding-top: 10px;">
+        <div class="col-6">
+            <label >Fecha de nacimiento</label>
+            <input type="date" class="form-control" #nacimientoInput value="1999-01-08">
+        </div>
+    </div>
+
+    <div class="row" style="padding-top: 10px;">
+        <div class="col">
+            <button class="btn btn-dark btn-lg" (click)="recuperarPassword(emailInput, nacimientoInput)"> Recuperar Contraseña</button>
+        </div>
+    </div>
+
+</div>
