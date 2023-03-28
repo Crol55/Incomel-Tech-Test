@@ -9,6 +9,7 @@ CREATE TABLE USUARIO(
     `fecha_nacimiento` DATE NOT NULL,
     `password` varchar(50) NOT NULL,
     `fecha_creacion` DATETIME NOT NULL DEFAULT NOW(),
+    `reset_password_code` varchar(100)  DEFAULT null,
     PRIMARY KEY (id)
 );
 
